@@ -4,7 +4,7 @@
 
 ### a
 
-```pseudo
+```pascal
 methode durchstreichen(a, n)
     i <- a
     while a <- n do
