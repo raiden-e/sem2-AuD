@@ -6,14 +6,14 @@
 
 ```pascal
 methode durchstreichen(a, n)
-    i <- a
-    while a <- n do
+    i <- a + a
+    while a <= n do
         if not istDurchgestrichen(a)
         then
             durchstreichen(a)
         endif
-        a <- a + i
-    end while
+        i <- a + i
+    end for
 ```
 
 ### b

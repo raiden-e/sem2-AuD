@@ -51,11 +51,11 @@ public class SiebDesEratosthenes {
     }
 
     public static void durchstreichenVielfache(int a, int n) {
-        int i = a;
-        while (a <= n) {
-            if (!istDurchgestrichen(a) && i != a)
-                durchstreichen(a);
-            a += i;
+        int i = a + a;
+        while (i <= n) {
+            if (!istDurchgestrichen(i))
+                durchstreichen(i);
+            i += a;
         }
     }
 }
