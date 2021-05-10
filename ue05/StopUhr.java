@@ -1,4 +1,4 @@
-package ue02.Aufgabe5;
+package ue05;
 
 public class StopUhr {
     private long startTime, stopTime;

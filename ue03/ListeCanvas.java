@@ -1,3 +1,5 @@
+package ue03;
+
 import java.awt.*;
 
 public class ListeCanvas extends Canvas {

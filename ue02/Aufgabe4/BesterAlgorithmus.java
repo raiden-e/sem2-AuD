@@ -1,3 +1,5 @@
+package ue02.Aufgabe4;
+
 import java.lang.Math;
 
 public class BesterAlgorithmus {

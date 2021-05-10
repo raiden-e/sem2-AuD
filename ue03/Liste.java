@@ -1,3 +1,5 @@
+package ue03;
+
 import java.util.*;
 
 public class Liste<T> {
@@ -148,6 +150,7 @@ public class Liste<T> {
     public boolean istLeer() {
         // Diese Methode wird im Praktikum implementiert
         // TODO
+        return false;
     }
 
     public void verketten(Liste<T> zweiteListe) {

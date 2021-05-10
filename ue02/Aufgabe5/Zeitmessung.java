@@ -1,3 +1,5 @@
+package ue02.Aufgabe5;
+
 public class Zeitmessung {
     private static double tuwas() {
         return Math.random();

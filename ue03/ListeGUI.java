@@ -1,3 +1,5 @@
+package ue03;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
@@ -19,7 +21,7 @@ public class ListeGUI extends Frame {
     protected TextArea ausgabeTextbereich;
 
     protected Liste<Character> eineListe;
-    protected ListeCanvas eineZeichenflaeche; // Zeichenfl�che f�r die Animation
+    protected ListeCanvas eineZeichenflaeche; // Zeichenfläche für die Animation
 
     // Operationen
     public ListeGUI() {
@@ -39,10 +41,10 @@ public class ListeGUI extends Frame {
         add(positionTextfeld = new TextField());
         positionTextfeld.setBounds(90, 137, 45, 23);
         add(einfuegenDruckknopf = new Button());
-        einfuegenDruckknopf.setLabel("Einf�gen");
+        einfuegenDruckknopf.setLabel("Einfügen");
         einfuegenDruckknopf.setBounds(30, 170, 100, 23);
         add(anhaengenDruckknopf = new Button());
-        anhaengenDruckknopf.setLabel("Anh�ngen");
+        anhaengenDruckknopf.setLabel("Anhängen");
         anhaengenDruckknopf.setBounds(140, 170, 100, 23);
         add(entfernenDruckknopf = new Button());
         entfernenDruckknopf.setLabel("Entfernen");
@@ -63,7 +65,7 @@ public class ListeGUI extends Frame {
         ausgabeTextbereich.setBounds(90, 255, 370, 23);
         ausgabeTextbereich.setEnabled(false);
 
-        // Registrieren der Ereignisabh�rer
+        // Registrieren der Ereignisabhörer
         AktionsAbhoerer einAktionsAbhoerer = new AktionsAbhoerer();
         einfuegenDruckknopf.addActionListener(einAktionsAbhoerer);
         anhaengenDruckknopf.addActionListener(einAktionsAbhoerer);
@@ -72,7 +74,7 @@ public class ListeGUI extends Frame {
         suchenDruckknopf.addActionListener(einAktionsAbhoerer);
         traversierenDruckknopf.addActionListener(einAktionsAbhoerer);
 
-        // Test f�r Verkettung zweier Listen
+        // Test für Verkettung zweier Listen
         eineListe = new Liste<Character>();
         eineListe.anfuegen(new Character('A'));
         eineListe.anfuegen(new Character('B'));
@@ -90,7 +92,7 @@ public class ListeGUI extends Frame {
         });
     }
 
-    // Innere Klasse f�r die Ereignisabh�rer
+    // Innere Klasse für die Ereignisabhörer
     class AktionsAbhoerer implements ActionListener {
         private Character getCharacter() {
             final String s = wertTextfeld.getText();

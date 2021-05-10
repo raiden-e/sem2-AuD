@@ -1,3 +1,5 @@
+package ue03;
+
 public class Link<T> {
     public T daten;
     public Link<T> naechster;
