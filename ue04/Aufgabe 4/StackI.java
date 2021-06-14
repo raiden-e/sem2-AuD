@@ -2,8 +2,8 @@
 
 interface StackI<E>
 {
-	public void push(E element);
-	public void pop();
-	public E top();
-	public boolean isEmpty();
+    public void push(E element);
+    public void pop();
+    public E top();
+    public boolean isEmpty();
 }

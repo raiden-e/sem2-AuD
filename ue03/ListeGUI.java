@@ -2,8 +2,8 @@ package ue03;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.applet.*;
-import java.util.*;
+// import java.applet.*;
+// import java.util.*;
 
 public class ListeGUI extends Frame {
     // Attribute
@@ -76,11 +76,11 @@ public class ListeGUI extends Frame {
 
         // Test für Verkettung zweier Listen
         eineListe = new Liste<Character>();
-        eineListe.anfuegen(new Character('A'));
-        eineListe.anfuegen(new Character('B'));
+        eineListe.anfuegen(Character.valueOf('A'));
+        eineListe.anfuegen(Character.valueOf('B'));
         Liste<Character> zweiteListe = new Liste<Character>();
-        zweiteListe.anfuegen(new Character('C'));
-        zweiteListe.anfuegen(new Character('D'));
+        eineListe.anfuegen(Character.valueOf('C'));
+        eineListe.anfuegen(Character.valueOf('D'));
         eineListe.verketten(zweiteListe);
 
         eineZeichenflaeche.zeichneNeu(eineListe);

@@ -1,6 +1,6 @@
 package ue03;
 
-import java.util.*;
+// import java.util.*;
 
 public class Liste<T> {
     protected Link<T> anfang;
@@ -29,7 +29,7 @@ public class Liste<T> {
         // Clowns könnten diese Methode bei leerer Liste aufrufen
         if (!istLeer()) {
             // Bei einer Liste mit nur noch einem Element muss
-            // auch ende gelüscht werden
+            // auch ende gelöscht werden
             if (anfang == ende)
                 ende = null;
 
@@ -55,7 +55,7 @@ public class Liste<T> {
         }
     }
 
-    // EINFüGEN AN EINER BESTIMMTEN STELLE
+    // EINFÜGEN AN EINER BESTIMMTEN STELLE
     // Der Programmcode ist so gestaltet, dass er fehlerhafte Eingaben
     // (z.B. eine negative oder zu hohe Position) elegant verarbeitet
     // ohne abzustürzen.
@@ -68,11 +68,11 @@ public class Liste<T> {
             return;
         }
 
-        // VORGüNGER ZUR POSITION FINDEN
-        // Dessen Vorgünger muss es geben: lediglich bei einer leeren
+        // VORGÄNGER ZUR POSITION FINDEN
+        // Dessen Vorgänger muss es geben: lediglich bei einer leeren
         // Liste oder für position==0 gibt es keinen. Genau diese Fülle
         // wurden aber oben bereits behandelt! Wird eine zu hohe position
-        // übergeben, wird automatisch das letzte Element zum Vorgünger.
+        // übergeben, wird automatisch das letzte Element zum Vorgänger.
         Link<T> vorgaenger = anfang;
 
         while ((--position > 0) && (vorgaenger.naechster != null))
@@ -92,15 +92,15 @@ public class Liste<T> {
         if (istLeer() || (position < 0))
             return null;
 
-        // Wenn die position 0 ist, wird am Anfang der Liste gelüscht
+        // Wenn die position 0 ist, wird am Anfang der Liste gelöscht
         if (position == 0)
             return entfernen();
 
-        // VORGüNGER ZUR POSITION FINDEN
-        // Bei einer leeren Liste oder für position==0 gibt es keinen Vorgünger;
+        // VORGÄNGER ZUR POSITION FINDEN
+        // Bei einer leeren Liste oder für position==0 gibt es keinen Vorgänger;
         // genau diese Fülle wurden oben bereits behandelt. Es gibt aber auch
-        // keinen Vorgüner, wenn position zu groü ist! In diesem Fall wird das
-        // letzte Element NICHT Vorgünger, damit nur tatsüchlich existierende
+        // keinen Vorgäner, wenn position zu groß ist! In diesem Fall wird das
+        // letzte Element NICHT Vorgänger, damit nur tatsächlich existierende
         // Elemente aus der Liste entfernt werden.
         Link<T> vorgaenger = anfang;
 
@@ -113,7 +113,7 @@ public class Liste<T> {
 
         final T opfer = vorgaenger.naechster.daten;
 
-        // Element lüschen und ggf. ende anpassen beim Lüschen des letzten
+        // Element löschen und ggf. ende anpassen beim Löschen des letzten
         // Listen-Elements
         if ((vorgaenger.naechster = vorgaenger.naechster.naechster) == null)
             ende = vorgaenger;
@@ -132,7 +132,7 @@ public class Liste<T> {
         Link<T> zeiger = anfang;
         int position = 0;
 
-        // Abfrage auf Gleichheit ist müglich mit equals (Operation von der Klasse
+        // Abfrage auf Gleichheit ist möglich mit equals (Operation von der Klasse
         // Object)
         while ((zeiger != null) && !zeiger.daten.equals(daten)) {
             position++;
