@@ -1,7 +1,7 @@
 package ue06;
 
 import java.awt.*;
-import java.applet.*;
+// import java.applet.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -89,7 +89,7 @@ public class BaumGUI extends Frame {
         final BaumInfo info = einBaum.getBaumInfo();
 
         infoLabel.setText("Der Baum hat eine Höhe von " + info.hoehe + " und enthält " + info.anzKnoten
-                + " Knoten (davon " + info.anzBlaetter + " Blätter).");
+                + " Knoten, davon " + info.anzBlaetter + " Blätter).");
     }
 
     // Innere Klassen

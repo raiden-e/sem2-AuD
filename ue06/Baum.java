@@ -240,11 +240,13 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversierePreOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
+        String result = "" + einKnoten.getDaten();
+        if (einKnoten.getKnotenLinks() != null)
+            result += traversierePreOrder(einKnoten.getKnotenLinks());
+        if (einKnoten.getKnotenRechts() != null)
+            result += traversierePreOrder(einKnoten.getKnotenRechts());
+        return result;
 
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
-
-        return "NOCH NICHT IMPLEMENTIERT";
     }
 
     // In-Order
@@ -254,11 +256,13 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversiereInOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
-
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
-
-        return "NOCH NICHT IMPLEMENTIERT";
+        String result = "";
+        if (einKnoten.getKnotenLinks() != null)
+            result += traversiereInOrder(einKnoten.getKnotenLinks());
+        result += einKnoten.getDaten();
+        if (einKnoten.getKnotenRechts() != null)
+            result += traversiereInOrder(einKnoten.getKnotenRechts());
+        return result;
     }
 
     // Post-Order
@@ -268,11 +272,13 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversierePostOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
+        String result = "";
+        if (einKnoten.getKnotenLinks() != null)
+            result += traversierePostOrder(einKnoten.getKnotenLinks());
+        if (einKnoten.getKnotenRechts() != null)
+            result += traversierePostOrder(einKnoten.getKnotenRechts());
+        return result + einKnoten.getDaten();
 
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
-
-        return "NOCH NICHT IMPLEMENTIERT";
     }
 
     // Methoden zur Baum-Info
@@ -282,11 +288,15 @@ public class Baum<T extends Comparable<T>> {
     }
 
     private BaumInfo getBaumInfo(final Knoten<T> einKnoten) {
-        assert (einKnoten != null);
-
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
-
-        return new BaumInfo();
+        BaumInfo info = new BaumInfo();
+        if (einKnoten != null) {
+            final BaumInfo infoLinks = getBaumInfo(einKnoten.getKnotenLinks());
+            final BaumInfo infoRechts = getBaumInfo(einKnoten.getKnotenRechts());
+            info.anzKnoten = infoLinks.anzKnoten + infoRechts.anzKnoten + 1;
+            info.anzBlaetter = (infoLinks.anzKnoten == 0) && (infoRechts.anzKnoten == 0) ? 1
+                    : infoLinks.anzBlaetter + infoRechts.anzBlaetter;
+            info.hoehe = (infoLinks.hoehe < infoRechts.hoehe ? infoRechts.hoehe : infoLinks.hoehe) + 1;
+        }
+        return info;
     }
 }

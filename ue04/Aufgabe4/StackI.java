@@ -1,9 +1,13 @@
+package ue04.Aufgabe4;
+
 // Abstrakte Datenstruktur Stack, realisiert als Java-Interface
 
-interface StackI<E>
-{
+interface StackI<E> {
     public void push(E element);
+
     public void pop();
+
     public E top();
+
     public boolean isEmpty();
 }
