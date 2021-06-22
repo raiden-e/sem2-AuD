@@ -1,5 +1,7 @@
 package ue07;
 
+// import org.graalvm.compiler.phases.common.FloatingReadPhase;
+
 public class AVLBaum<T extends Comparable<T>> {
     private AVLKnoten<T> wurzel;
     private boolean hoeheGeaendert;
@@ -21,8 +23,19 @@ public class AVLBaum<T extends Comparable<T>> {
 
     public boolean suchen(final T daten) {
         // Diese Methode wird im Praktikum implementiert
-        // TODO
-
+        if (istLeer())
+            return false;
+        AVLKnoten<T> teilbaum = wurzel;
+        while (teilbaum != null) {
+            // Vergleichs-Ergebnis zwischenspeichern, da compareTo()
+            // aufwändig sein kann, und das Ergebnis mehrfach benötigt wird
+            final int knotenWert = daten.compareTo(teilbaum.getDaten());
+            if (knotenWert == 0)
+                return true; // Verlässt sofort die Methode
+            teilbaum = (knotenWert < 0) ? teilbaum.getKnotenLinks() : teilbaum.getKnotenRechts();
+        }
+        // Die Suche ist bei einem Blatt angelangt, ohne dass die Daten
+        // auf dem Weg
         return false;
     }
 

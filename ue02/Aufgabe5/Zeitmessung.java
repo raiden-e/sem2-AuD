@@ -1,5 +1,7 @@
 package ue02.Aufgabe5;
 
+import StopUhr.StopUhr;
+
 public class Zeitmessung {
     private static double tuwas() {
         return Math.random();

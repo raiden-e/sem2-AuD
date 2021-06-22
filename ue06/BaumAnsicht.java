@@ -16,7 +16,7 @@ public class BaumAnsicht {
         ausgebenTeilbaum(einBaum.getWurzel(), -1, -1, xLinks, xRechts, y, g);
     }
 
-    public void ausgebenTeilbaum(Knoten teilbaum, int xParent, int yParent, int xLinks, int xRechts, int y,
+    public void ausgebenTeilbaum(Knoten<Character> teilbaum, int xParent, int yParent, int xLinks, int xRechts, int y,
             Graphics g) {
         if (teilbaum != null) {
             final int mitte = (xLinks + xRechts) / 2;

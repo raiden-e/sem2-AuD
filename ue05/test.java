@@ -1,9 +1,9 @@
 package ue05;
 
-import ue02.Aufgabe5.StopUhr;
+import StopUhr.StopUhr;
 
 public class test {
-    static StopUhr uhr = new ue02.Aufgabe5.StopUhr();
+    static StopUhr uhr = new StopUhr();
 
     public static void rev1(int n) {
         System.out.print(n % 10);

@@ -1,6 +1,6 @@
 package ue05;
 
-import ue02.Aufgabe5.StopUhr;
+import StopUhr.StopUhr;
 
 public class fibTest {
     public static void main(String[] args) {
