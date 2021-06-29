@@ -1,4 +1,4 @@
-package ue09;
+package ue10;
 
 import StopUhr.StopUhr;
 
@@ -53,29 +53,29 @@ public class Main {
 
             // Array sortieren
             switch (algorithmus) {
-                case INSERTIONSORT:
-                    BasicSort.insertionsort(array, 0, array.length - 1);
-                    break;
-
-                case SELECTIONSORT:
-                    BasicSort.selectionsort(array, 0, array.length - 1);
-                    break;
-
-                case BUBBLESORT:
-                    BasicSort.bubblesort(array, 0, array.length - 1);
-                    break;
-
-                case QUICKSORT:
-                    QuickSort.quicksort(array, 0, array.length - 1);
-                    break;
-
-                // case HEAPSORT:
-                //     HeapSort.heapsort(array, 0, array.length - 1);
+                // case INSERTIONSORT:
+                //     BasicSort.insertionsort(array, 0, array.length - 1);
                 //     break;
 
-                // case MERGESORT:
-                //     MergeSort.mergesort(array, 0, array.length - 1);
+                // case SELECTIONSORT:
+                //     BasicSort.selectionsort(array, 0, array.length - 1);
                 //     break;
+
+                // case BUBBLESORT:
+                //     BasicSort.bubblesort(array, 0, array.length - 1);
+                //     break;
+
+                // case QUICKSORT:
+                //     QuickSort.quicksort(array, 0, array.length - 1);
+                //     break;
+
+                case HEAPSORT:
+                    HeapSort.heapsort(array, 0, array.length - 1);
+                    break;
+
+                case MERGESORT:
+                    MergeSort.mergesort(array, 0, array.length - 1);
+                    break;
             }
 
             // Zeitmessung stoppen

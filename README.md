@@ -4,7 +4,7 @@ Die Lösungen zu den Aufgaben aus AuD - Sem 2
 
 ## Setup
 
-Download [JDK 15.0.1](https://d.computerbild.de/downloads/4716198/jdk-15.0.1_windows-x64_bin.exe?__cbodl__=1611742724_bbf4af1e234150cff53301b8ca9cdbac&_chksum_=284e90f66d2d673cf428906b92fba304)
+Download [JDK 15.0.1](https://download.oracle.com/otn/java/jdk/15.0.1%2B9/51f4f36ad4ef43e39d0dfdbaf6549e32/jdk-15.0.1_windows-x64_bin.exe)
 
 Install VS Code and [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 

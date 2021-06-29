@@ -1,4 +1,4 @@
-package ue09;
+package ue10;
 
 public class MergeSort {
     public static void mergesort(int[] array, final int links, final int rechts) {
@@ -16,14 +16,23 @@ public class MergeSort {
             mergesortTD(array, hilfsarray, links, mitte);
             mergesortTD(array, hilfsarray, mitte + 1, rechts);
             // Sortierte Teilfelder mischen
-            merge(array, hilfsarray, links, mitte, rechts);
+            merge2(array, hilfsarray, links, mitte, rechts);
         }
     }
 
     // Bottom-Up-Mergesort
     public static void mergesortBU(int[] array, int[] hilfsarray, final int links, final int rechts) {
-        // TODO: Praktikum 10
+        int laenge = 1;
 
+        while (links + laenge <= rechts) {
+            int i = links;
+            while (i + laenge <= rechts) {
+                int r = Math.min(i + 2 * laenge - 1, rechts);
+                merge(array, hilfsarray, i, i + laenge - 1, r);
+                i += 2 * laenge;
+            }
+            laenge *= 2;
+        }
     }
 
     // Mischen der Teilfelder array[links]...array[mitte] und
