@@ -55,13 +55,14 @@ public class HashTable {
 
     // Quadratisches Sondieren
     public int findePosition(IHashable o) {
-        // TODO: Praktikum 11
+        final int posf = o.hash(table.length);
+        int pos = o.hash(table.length);
+        int i = 0;
 
-        // Suche Index, an der das Objekt o in table eingetragen ist bzw. eingetragen
-        // werden kann
-        // Kollisionauflösung durch quadratisches Sondieren
+        while (table[pos] != null && !table[pos].equals(o))
+            pos = ((++i) * i + posf) % table.length;
 
-        return 0;
+        return pos;
     }
 
     // Findet ein Objekt in der Hashtabelle

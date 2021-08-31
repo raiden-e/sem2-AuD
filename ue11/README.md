@@ -47,9 +47,9 @@ O(n*log(n) + n/2 * log(n))
 
 | 0          | 1   | 2   | 3   | 4   | 5   | 6        | 7     | 8   | 9          | 10  |
 | ---------- | --- | --- | --- | --- | --- | -------- | ----- | --- | ---------- | --- |
-| GOLDHAMMER | 1   | 2   | 3   | 4   | 5   | STARK    | MEYER | 8   | ZEPPENFELD | 10  |
+| GOLDHAMMER | 1   | 2   | 3   | 4   | 5   | THIESING | MEYER | 8   | ZEPPENFELD | 10  |
+| 0          | 1   | 2   | 3   | 4   | 5   | STARK    | 7     | 8   | 9          | 10  |
 | 0          | 1   | 2   | 3   | 4   | 5   | PATZELT  | 7     | 8   | 9          | 10  |
-| 0          | 1   | 2   | 3   | 4   | 5   | THIESING | 7     | 8   | 9          | 10  |
 
 ## Aufgabe 3 b
 
