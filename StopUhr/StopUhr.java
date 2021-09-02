@@ -11,6 +11,11 @@ public class StopUhr {
         stopTime = System.nanoTime();
     }
 
+    public long getStop() {
+        stop();
+        return getDuration();
+    }
+
     public long getDuration() {
         return stopTime - startTime;
     }

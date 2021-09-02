@@ -30,11 +30,7 @@ public class HashTableTest {
             h.insert(new Professor(Profs[a][0], Integer.parseInt(Profs[a][1])));
 
         // Gespeicherte Professorendaten nacheinander aus der Tabelle
-<<<<<<< HEAD
-        // auslesen und den jeweils zugeh�rigen Namen ausgeben
-=======
         // auslesen und den jeweils zugehörigen Namen ausgeben
->>>>>>> 1b579c8b1b9a2d60c8e965865640327d2afb77ae
         System.out.println("\nHash-Tabelle:");
         for (int a = 0; a < h.getSize(); a++) {
             final Professor p = (Professor) h.getEntry(a);
@@ -42,17 +38,11 @@ public class HashTableTest {
                 System.out.println(a + " " + p.getName());
         }
 
-<<<<<<< HEAD
-        System.out.println("\nZuordnung per Roundtrip �ber den Hashwert testen:");
-=======
         System.out.println("\nZuordnung per Roundtrip über den Hashwert testen:");
->>>>>>> 1b579c8b1b9a2d60c8e965865640327d2afb77ae
         for (int a = 0; a < h.getSize(); a++)
             if ((Professor) h.getEntry(a) != null)
                 System.out.println("" + a + " <---> " + h.findePosition(h.getEntry(a)));
     }
-<<<<<<< HEAD
-=======
 
     public static boolean binaereSuche(final String[] worte, final String begriff) {
         int links = 0;
@@ -71,5 +61,4 @@ public class HashTableTest {
         }
         return false;
     }
->>>>>>> 1b579c8b1b9a2d60c8e965865640327d2afb77ae
 }

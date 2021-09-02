@@ -9,11 +9,12 @@ public class SiebDesEratosthenes {
         System.out.println("Bitte n eingeben:");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); // Obergrenze n einlesen
-        int a;
         sc.close();
-        for (a = 1; a <= n; a++) { // Schreibe Zahlen von 1 bis n auf
+
+        int a;
+        for (a = 1; a <= n; a++) // Schreibe Zahlen von 1 bis n auf
             hinschreiben(a);
-        }
+
         durchstreichen(1); // Streiche die Zahl 1 durch
         a = 2;
         do {
@@ -21,33 +22,29 @@ public class SiebDesEratosthenes {
                 durchstreichenVielfache(a, n); // Streiche alle Vielfachen von adurch
             a++;
         } while (a * a <= n);
-        for (a = 1; a <= n; a++) { // Ausgabe der Primzahlen
-            if (!istDurchgestrichen(a)) {
+        for (a = 1; a <= n; a++) // Ausgabe der Primzahlen
+            if (!istDurchgestrichen(a))
                 System.out.println(a);
-            }
-        }
     }
 
     public static void hinschreiben(int a) {
         boolean[] lst = new boolean[a + 1];
-        for (int i = 0; i < liste.length; i++) {
+        for (int i = 0; i < liste.length; i++)
             lst[i] = liste[i];
-        }
+
         lst[a] = true;
         liste = lst;
     }
 
     public static void durchstreichen(int a) {
-        if (liste[a])
+        if (0 <= a && a < liste.length)
             liste[a] = false;
     }
 
     public static boolean istDurchgestrichen(int a) {
-        try {
-            return liste[a] ? false : true;
-        } catch (ArrayIndexOutOfBoundsException exception) {
+        if (0 <= a && a < liste.length)
             return true;
-        }
+        return liste[a] ? false : true;
     }
 
     public static void durchstreichenVielfache(int a, int n) {

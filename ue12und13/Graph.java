@@ -1,4 +1,4 @@
-package ue12;
+package ue12und13;
 
 public class Graph {
     private static final int KNOTENZAHL = 7;

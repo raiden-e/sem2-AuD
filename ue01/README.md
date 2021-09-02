@@ -2,12 +2,12 @@
 
 ## Aufgabe 1
 
-### a
+### a)
 
 ```pascal
 methode durchstreichen(a, n)
-    i <- a + a
-    while a <= n do
+    i <- a
+    while i <= n do
         if not istDurchgestrichen(a)
         then
             durchstreichen(a)
@@ -16,12 +16,23 @@ methode durchstreichen(a, n)
     end for
 ```
 
-### b
+Musterlösung:
+
+```pascal
+durchstreichenVielfache(a, n)
+    for b ← 2*a to n step a do
+        durchstreichen(b)
+    end for
+```
+
+### b)
 
 Die abstrakte Datenstruktur "Sieb des Eratosthenes" besitzt also die Methoden
 hinschreiben, durchstreichen und istDurchgestrichen. Wie könnten
 diese Methoden durch eine (aus Einführung in die Programmierung bekannte)
 konkrete Datenstruktur in Java realisiert werden?
+
+> Boolean Array
 
 #### hinschreiben
 
@@ -37,3 +48,4 @@ void (null)
 
 Prüft ob eine zahl gestrichen ist
 boolean
+
