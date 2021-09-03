@@ -1,4 +1,4 @@
-package ue12;
+package ue12und13;
 
 public class Knoten {
     private String name;
