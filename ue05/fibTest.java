@@ -16,5 +16,4 @@ public class fibTest {
         meineUhr.stop();
         System.out.println("Laufzeit bei iterativer Berechnung: " + meineUhr.getDuration() / 1000000.0 + " msec");
     }
-
 }

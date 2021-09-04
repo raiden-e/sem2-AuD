@@ -33,7 +33,7 @@ public class Baum<T extends Comparable<T>> {
             return false;
 
         // Vergleichs-Ergebnis zwischenspeichern, da compareTo()
-        // aufwündig sein kann, und das Ergebnis mehrfach benütigt
+        // aufwändig sein kann, und das Ergebnis mehrfach benötigt
         // wird
         final int cmp = daten.compareTo(teilbaum.getDaten());
 
@@ -196,7 +196,7 @@ public class Baum<T extends Comparable<T>> {
     // des größten Knotens verwiesen werden. Der rechten Teilbaum des größten
     // Knotens ist immer leer (Def. größter Knoten)
     private void ersetzeKnoten(Knoten<T> zuLoeschenderKnoten) {
-        // größten Knoten suchen; dessen rechter Nachfolger ist null.
+        // Größten Knoten suchen; dessen rechter Nachfolger ist null.
         // Daher kann rechter Nachfolger des zu löschenden Knotens übernommen werden.
         Knoten<T> elternknoten = zuLoeschenderKnoten;
         Knoten<T> teilbaum = zuLoeschenderKnoten.getKnotenLinks();
@@ -211,7 +211,7 @@ public class Baum<T extends Comparable<T>> {
         // Daten des größten Knotens werden in zu löschenden Knoten kopiert
         zuLoeschenderKnoten.setDaten(groessterKnoten.getDaten());
 
-        if (elternknoten == zuLoeschenderKnoten) // größter Knoten ist Wurzel des linken Teilbaums des zu löschenden
+        if (elternknoten == zuLoeschenderKnoten) // Größter Knoten ist Wurzel des linken Teilbaums des zu Löschenden
         {
             // Zu löschender Knoten ist gleichzeitig Elternknoten des größten Knotens
             // Rechter Teilbaum des zu löschenden Knotens muss erhalten bleiben
@@ -240,13 +240,15 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversierePreOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
-        String result = "" + einKnoten.getDaten();
+        // Diese Methode wird im Praktikum implementiert
+        String order = "";
+        // System.out.println(einKnoten.getDaten());
         if (einKnoten.getKnotenLinks() != null)
-            result += traversierePreOrder(einKnoten.getKnotenLinks());
+            order += traversierePreOrder(einKnoten.getKnotenLinks());
         if (einKnoten.getKnotenRechts() != null)
-            result += traversierePreOrder(einKnoten.getKnotenRechts());
-        return result;
+            order += traversierePreOrder(einKnoten.getKnotenRechts());
 
+        return einKnoten.getDaten() + order;
     }
 
     // In-Order
@@ -256,13 +258,16 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversiereInOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
-        String result = "";
+
+        // Diese Methode wird im Praktikum implementiert
+        String order = "";
+        String order2 = "";
         if (einKnoten.getKnotenLinks() != null)
-            result += traversiereInOrder(einKnoten.getKnotenLinks());
-        result += einKnoten.getDaten();
+            order += traversiereInOrder(einKnoten.getKnotenLinks());
         if (einKnoten.getKnotenRechts() != null)
-            result += traversiereInOrder(einKnoten.getKnotenRechts());
-        return result;
+            order2 += traversiereInOrder(einKnoten.getKnotenRechts());
+
+        return order + einKnoten.getDaten() + order2;
     }
 
     // Post-Order
@@ -272,12 +277,15 @@ public class Baum<T extends Comparable<T>> {
 
     private String traversierePostOrder(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
-        String result = "";
+
+        // Diese Methode wird im Praktikum implementiert
+        String order = "";
         if (einKnoten.getKnotenLinks() != null)
-            result += traversierePostOrder(einKnoten.getKnotenLinks());
+            order += traversierePostOrder(einKnoten.getKnotenLinks());
         if (einKnoten.getKnotenRechts() != null)
-            result += traversierePostOrder(einKnoten.getKnotenRechts());
-        return result + einKnoten.getDaten();
+            order += traversierePostOrder(einKnoten.getKnotenRechts());
+
+        return order + einKnoten.getDaten();
 
     }
 
@@ -288,15 +296,11 @@ public class Baum<T extends Comparable<T>> {
     }
 
     private BaumInfo getBaumInfo(final Knoten<T> einKnoten) {
-        BaumInfo info = new BaumInfo();
-        if (einKnoten != null) {
-            final BaumInfo infoLinks = getBaumInfo(einKnoten.getKnotenLinks());
-            final BaumInfo infoRechts = getBaumInfo(einKnoten.getKnotenRechts());
-            info.anzKnoten = infoLinks.anzKnoten + infoRechts.anzKnoten + 1;
-            info.anzBlaetter = (infoLinks.anzKnoten == 0) && (infoRechts.anzKnoten == 0) ? 1
-                    : infoLinks.anzBlaetter + infoRechts.anzBlaetter;
-            info.hoehe = (infoLinks.hoehe < infoRechts.hoehe ? infoRechts.hoehe : infoLinks.hoehe) + 1;
-        }
-        return info;
+        assert (einKnoten != null);
+
+        // Diese Methode wird im Praktikum implementiert
+        // TODO
+
+        return new BaumInfo();
     }
 }

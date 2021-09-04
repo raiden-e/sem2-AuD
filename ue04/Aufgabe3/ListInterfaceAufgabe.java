@@ -2,8 +2,6 @@ package ue04.Aufgabe3;
 
 import java.util.*;
 
-// import org.graalvm.compiler.lir.StandardOp.NullCheck;
-
 public class ListInterfaceAufgabe {
     // Elemente in Liste einfügen
     static void fillList(List<String> list) {
@@ -21,28 +19,17 @@ public class ListInterfaceAufgabe {
     // Liste vom Anfang bis zum Ende mit einer
     // foreach-Schleife iterieren und Elemente ausgeben
     static void printList(List<String> list) {
-        for (String string : list) {
-            System.out.println(string);
-        }
+        for (var element : list)
+            System.out.println(element);
     }
 
-    // Meine version
-    // static void remove5List(List<String> list) {
-    // LinkedList<String> tmp = new LinkedList<String>();
-    // for (int i = 0; i < list.size(); i++) {
-    // if (Integer.parseInt(list.get(i)) % 5 != 0) {
-    // tmp.add(list.get(i));
-    // }
-    // }
-    // list = tmp;
-    // }
     // Alle Elemente aus der Liste entfernen, die durch 5 teilbar sind
     static void remove5List(List<String> list) {
-        ListIterator<String> tmp = list.listIterator();
-        while (tmp.hasNext()) {
-            String st = tmp.next();
-            if (st.endsWith("0") || st.endsWith("5") && !st.equals("0"))
-                tmp.remove();
+        Iterator<String> iter = list.iterator();
+        while (iter.hasNext()) {
+            var element = iter.next();
+            if (element.endsWith("5") || element.endsWith("0") && element != "0")
+                iter.remove();
         }
     }
 
@@ -64,29 +51,16 @@ public class ListInterfaceAufgabe {
         System.out.println("\nAusgabe der zweiten Liste(list2)");
         printList(list2);
 
-        if (list2.indexOf("7") == -1 || list2.indexOf("13") == -1)
-            return;
-        ArrayList<String> sublist = new ArrayList<String>() {
-            {
-                for (int i = (int) list2.indexOf("7"); i < (int) list2.indexOf("13") + 1; i++)
-                    add((String) list2.get(i));
-            }
-        };
+        List<String> sublist = list1.subList(list1.indexOf("7"), list1.indexOf("13") + 1);
 
-        // Geht auch:
-        // List<String> teillist = list2.subList(list2.indexOf("7"), list2.indexOf("13") + 1);
+        System.out.println("Subliste:");
+        printList(sublist);
 
-        System.out.println("Ausgabe der Teilliste");
-        for (var e : sublist)
-            System.out.println(e);
-        sublist.remove(sublist.indexOf("11"));
-        // Geht auch: sublist.remove("11");
-        System.out.println("Erneute Ausgabe der Teilliste");
-        for (var e : sublist)
-            System.out.println(e);
+        sublist.remove("11");
 
-        System.out.println("Ausgabe der list2");
-        for (var e : list2)
-            System.out.println(e);
+        System.out.println("Subliste:");
+        printList(sublist);
+        System.out.println("Liste2");
+        printList(list1);
     }
 }

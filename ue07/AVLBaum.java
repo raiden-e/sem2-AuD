@@ -1,6 +1,7 @@
 package ue07;
 
-// import org.graalvm.compiler.phases.common.FloatingReadPhase;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class AVLBaum<T extends Comparable<T>> {
     private AVLKnoten<T> wurzel;
@@ -23,19 +24,18 @@ public class AVLBaum<T extends Comparable<T>> {
 
     public boolean suchen(final T daten) {
         // Diese Methode wird im Praktikum implementiert
+        AVLKnoten<T> knoten = wurzel;
+        int cmp;
+
         if (istLeer())
             return false;
-        AVLKnoten<T> teilbaum = wurzel;
-        while (teilbaum != null) {
-            // Vergleichs-Ergebnis zwischenspeichern, da compareTo()
-            // aufwändig sein kann, und das Ergebnis mehrfach benötigt wird
-            final int knotenWert = daten.compareTo(teilbaum.getDaten());
-            if (knotenWert == 0)
-                return true; // Verlässt sofort die Methode
-            teilbaum = (knotenWert < 0) ? teilbaum.getKnotenLinks() : teilbaum.getKnotenRechts();
+        while (knoten != null) {
+            cmp = daten.compareTo(knoten.getDaten());
+            if (cmp == 0)
+                return true;
+            knoten = cmp < 0 ? knoten.getKnotenLinks() : knoten.getKnotenRechts();
         }
-        // Die Suche ist bei einem Blatt angelangt, ohne dass die Daten
-        // auf dem Weg
+
         return false;
     }
 
@@ -230,9 +230,23 @@ public class AVLBaum<T extends Comparable<T>> {
 
     // Pre-Order
     public String traversierePreOrder() {
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
+        Deque<AVLKnoten<T>> s = new LinkedList<AVLKnoten<T>>();
+        AVLKnoten<T> knoten;
+        String ergebnis = "";
 
-        return "NOCH NICHT IMPLEMENTIERT";
+        s.push(wurzel);
+
+        while (!s.isEmpty()) {
+            knoten = s.pop();
+
+            ergebnis += knoten.getDaten();
+
+            if (knoten.getKnotenRechts() != null)
+                s.push(knoten.getKnotenRechts());
+            if (knoten.getKnotenLinks() != null)
+                s.push(knoten.getKnotenLinks());
+        }
+
+        return ergebnis;
     }
 }

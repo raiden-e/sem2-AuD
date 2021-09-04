@@ -22,7 +22,7 @@ Ja, für jeden Knoten ist das kleinere Blatt im linken Teilbaum und entsprechend
 - ist der Schlüssel im aktuellen Teilbaum enthalten? ende : weiter
 - ist der aktuelle Schlüssel kleiner? Schritt auf L wiederholen: Schritt auf R wiederholen
 
-## Aufgabe 1 e
+## Aufgabe 1 f
 
 Durch Rotation von 200, 210, 201, sodass 201(200,210) entsteht, kann der Baum vervollständigt werden.
 

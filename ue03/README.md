@@ -2,8 +2,12 @@
 
 ## Aufgabe 3.a
 
-Das Endobjekt zeigt auf das Anfangsobjekt der Liste B. Falls es ein Endobjekt gibt muss es entsprechend angepasst werden.
+- Der _Zeiger des letzten Elements_ muss auf den Anfang der ersten Elements der zweiten Liste zeigen
+- Das Endobjekt der _Liste_ muss angepasst werden
+
 
 ## Aufgabe 3.b
 
 Datentypen sollten stimmig sein. Endattribut muss angepasst werden.
+
+Anfangs- und Endzeiger der zu löschenden Liste sollten auf `null` gesetzt werden

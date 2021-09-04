@@ -14,14 +14,4 @@ public class Link<T> {
     public String toString() {
         return daten.toString();
     }
-
-    public static void main(String args[]) {
-        Link<String> mittleresElement = new Link<String>("Test", null);
-        mittleresElement.naechster = new Link<String>("Letzter", mittleresElement);
-        Link<String> anfang = new Link<String>("Erster", mittleresElement);
-
-        System.out.println(anfang);
-        System.out.println(mittleresElement);
-        System.out.println(mittleresElement.naechster);
-    }
 }

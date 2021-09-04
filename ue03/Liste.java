@@ -1,5 +1,7 @@
 package ue03;
 
+// import javax.management.openmbean.OpenDataException;
+
 // import java.util.*;
 
 public class Liste<T> {
@@ -148,24 +150,38 @@ public class Liste<T> {
 
     // Prüfen, ob Liste leer ist
     public boolean istLeer() {
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
+        if (this.anfang == null)
+            return true;
         return false;
     }
 
     public void verketten(Liste<T> zweiteListe) {
         assert (zweiteListe != null);
 
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
+        this.ende.naechster = zweiteListe.anfang;
+        this.ende = zweiteListe.ende;
+        zweiteListe.anfang = zweiteListe.ende = null;
     }
 
     public int entferneWerte(final T opfer) {
         int anzGeloeschte = 0;
 
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
+        Link<T> zeiger = anfang;
+        Link<T> vorgaenger = null;
 
+        while (zeiger != null) {
+            if (zeiger.daten.equals(opfer)) {
+                if (vorgaenger == null)
+                    anfang = zeiger.naechster;
+                else
+                    vorgaenger.naechster = zeiger.naechster;
+                anzGeloeschte++;
+            } else
+                vorgaenger = zeiger;
+
+            zeiger = zeiger.naechster;
+        }
+        ende = vorgaenger;
         return anzGeloeschte;
     }
 }

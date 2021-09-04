@@ -1,10 +1,5 @@
 package ue04.Aufgabe4;
 
-// import java.rmi.server.ObjID;
-// import java.util.concurrent.ArrayBlockingQueue;
-
-// import javax.management.RuntimeErrorException;
-
 public class Stack<E> implements StackI<E> {
     // Array, in dem die Elemente des Stacks gespeichert werden.
     // Das oberes Ende des Stacks liegt an Position pos-1.
@@ -14,7 +9,7 @@ public class Stack<E> implements StackI<E> {
 
     // Nächste freie Position im Array
     // Gleichzeitig Anzahl der im Array/Stack gespeicherten Elemente
-    // private int pos;
+    private int pos;
 
     // Erzeugt ein Stack-Objekt, in dem maximal size Elemente
     // abgespeichert werden können
@@ -22,37 +17,27 @@ public class Stack<E> implements StackI<E> {
         st = new Object[size];
     }
 
-    public int length() {
-        return st.length;
-    }
-
     // Legt übergebenes Element auf den Stack, sofern noch Platz
     // vorhanen ist. Das Element wird an Position pos gespeichert.
     public void push(E element) {
-        Object[] stTmp = new Object[st.length + 1];
-        for (int i = 0; i < st.length; i++)
-            stTmp[i] = st[i];
-        stTmp[st.length] = element;
-        st = stTmp;
+        if (pos < st.length)
+            st[pos++] = element;
     }
 
     // Holt oberstes Element vom Stack, sofern der Stack nicht leer ist.
     public void pop() {
-        assert !isEmpty();
-        Object[] stTmp = new Object[st.length - 1];
-        for (int i = 0; i < stTmp.length; i++)
-            stTmp[i] = st[i];
-        st = stTmp;
+        if (st[pos - 1] != null)
+            st[pos-- - 1] = null;
     }
 
     // Gibt oberstes Element auf dem Stack zurück, sofern der Stack nicht
     // leer ist. Bei leerem Stack wird null zurückgegeben.
     public E top() {
-        return isEmpty() ? null : (E) st[st.length - 1];
+        return isEmpty() ? null : (E) st[pos - 1];
     }
 
     // Gibt true zurück, falls der Stack leer ist
     public boolean isEmpty() {
-        return st.length == 0;
+        return pos <= 0;
     }
 }

@@ -6,7 +6,6 @@
 | ---------------------------------- | -------------------------------------- |
 | Konkrete Datenstruktur             | Array, dass bei Bedarf vergrößert wird |
 | doppelt verkettete zyklische Liste | ---------                              |
-| ----------                         | ---------                              |
 
 Beides sind Listen, die Daten chronologisch speichern.
 
@@ -33,7 +32,7 @@ Beides gleich schlecht.
 
 ### Sie benötigen eine Queue (Warte-schlange).
 
-Hierfür sollte man eine Liste nehmen, da man oft das Anfangselement entfernen möchte, was bei einem Array O(n) an zeit benötigt.
+Hierfür sollte man eine Liste nehmen, da man oft das Anfangselement entfernen möchte, was bei einem Array O(n) an Zeit benötigt.
 
 ### Sie benötigen eine Liste aus fortlaufend nummerierten Einträgen, wobei Sie überwiegend über den Index auf einzel-ne Elemente zugreifen.
 
@@ -42,3 +41,5 @@ Da man über auf Elemente über den Index zugreifen möchte, sollte man hier ein
 ### Sie müssen stets mit einem möglichst geringen Speicherplatz auskommen.
 
 Bei einer Liste benötigt man ein Anfagnsattribut, einen Payload und ein Refenzattribut pro Element, was Speicherplatz kostet. Daher sollte man hier ein Array wählen, hier muss lediglich der index gespeichert werden.
+
+> ML: LinkedList: Nur  der  tatsächlich  benötigte  Speicher-platz wird belegt.
