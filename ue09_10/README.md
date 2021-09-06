@@ -34,6 +34,6 @@ Ein Heap ist ein Binärbaum, dessen Knoten absteigend immer kleiner werden.
 
 ## Aufgabe 3
 
-Der Bottom-Up-Heapsort it die iterative Implementierung des Heapsorts. Die Strategie des Versickerns unterscheidet sich.
+Bei dem Bottem-Up Heapsort wird das zu versickernde Element bis nach unten versickert, ohne einen Größenvergleich zu machen. Somit wird die Heapeigenschaft während des Sortierens vernachlässigt. Das Verfahren kann situativ schneller sein und ist statistisch schneller als das einach Heapsortverfahren.
 
 ## Aufgabe 4

@@ -29,19 +29,19 @@ Das Verfahren ist auf alle Listen anwendbar, und gibt die jeweiligen Indeces zur
 
 ## Aufgabe 2 i
 
-O(n^2 + n/2 * log(n))
+O(n^2 + n/2 * log(n)) = O(n^2)
 
 ## Aufgabe 2 ii
 
-O(n*log(n) + n/2 * n)
+O(n*log(n) + n/2 * n) = O(n^2)
 
 ## Aufgabe 2 iii
 
-O(sum_i=n/2^n(i))
+O(sum_i=n/2^n(i)) = O(n^2)
 
 ## Aufgabe 2 iv
 
-O(n*log(n) + n/2 * log(n))
+O(n*log(n) + n/2 \* log(n)) = O(n\*log(n))
 
 ## Aufgabe 3 a
 

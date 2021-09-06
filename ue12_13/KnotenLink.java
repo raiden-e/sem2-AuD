@@ -1,4 +1,4 @@
-package ue12und13;
+package ue12_13;
 
 public class KnotenLink {
     private int laenge;
