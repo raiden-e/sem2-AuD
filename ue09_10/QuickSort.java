@@ -1,23 +1,22 @@
-package ue09;
+package ue09_10;
 
 public class QuickSort {
     public static void quicksort(int[] array, final int links, final int rechts) {
+        int vergleich = array[(links + rechts) / 2];
         int li = links;
         int re = rechts;
-        int mid = array[(links + rechts) / 2];
         do {
-            while (array[li] < mid)
+            while (array[li] < vergleich)
                 li++;
-            while (array[re] > mid)
+            while (array[re] > vergleich)
                 re--;
             if (li <= re) {
-                int t = array[re];
-                array[re] = array[li];
-                array[li] = t;
-                li++;
-                re--;
+                int x = array[li];
+                array[li++] = array[re];
+                array[re--] = x;
             }
-        } while (li <= re);
+        } while (re > li);
+
         if (links < re)
             quicksort(array, links, re);
         if (rechts > li)

@@ -1,4 +1,4 @@
-package ue10;
+package ue09_10;
 
 public class MergeSort {
     public static void mergesort(int[] array, final int links, final int rechts) {

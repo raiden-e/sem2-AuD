@@ -57,7 +57,7 @@ public class BesterAlgorithmus {
     // Gibt für jede Zahl n zwischen 1 und 2000 aus, welcher der
     // 6 Algorithmen (A1 .. A6) für das betrachtete n der Beste ist
     public static void main(String[] args) {
-        // TODO
+
         System.out.println(g2(3));
     }
 }

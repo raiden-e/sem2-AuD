@@ -1,4 +1,4 @@
-package ue10;
+package ue09_10;
 
 public class HeapSort {
     // Versickere das Element mit Index pos in dem Teilfeld von Index links bis
