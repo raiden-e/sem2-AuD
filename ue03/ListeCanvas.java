@@ -2,17 +2,17 @@ package ue03;
 
 import java.awt.*;
 
-public class ListeCanvas extends Canvas {
-    private Liste eineListe;
+public class ListeCanvas<T> extends Canvas {
+    private Liste<T> eineListe;
 
-    public void zeichneNeu(Liste eineListe) {
+    public void zeichneNeu(Liste<T> eineListe) {
         this.eineListe = eineListe;
 
         repaint();
     }
 
     public void paint(Graphics g) {
-        ListeIterator it = eineListe.iterator();
+        ListeIterator<T> it = eineListe.iterator();
         int x = 0;
         int y = 30;
         int position = 0;

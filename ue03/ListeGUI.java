@@ -21,7 +21,7 @@ public class ListeGUI extends Frame {
     protected TextArea ausgabeTextbereich;
 
     protected Liste<Character> eineListe;
-    protected ListeCanvas eineZeichenflaeche; // Zeichenfläche für die Animation
+    protected ListeCanvas<Character> eineZeichenflaeche; // Zeichenfläche für die Animation
 
     // Operationen
     public ListeGUI() {

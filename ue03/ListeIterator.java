@@ -2,7 +2,7 @@ package ue03;
 
 import java.util.*;
 
-public class ListeIterator<T> implements Iterator {
+public class ListeIterator<T> implements Iterator<T> {
     private Link<T> zeiger;
     private Link<T> ende;
 
@@ -24,5 +24,9 @@ public class ListeIterator<T> implements Iterator {
 
     public void remove() {
         throw new UnsupportedOperationException();
+    }
+
+    public void printEnde(){
+        System.out.println(ende);
     }
 }

@@ -8,5 +8,9 @@ public class ListeTest {
         Link<String> letzter = new Link<String>("letzer", null);
         mittleresElement.naechster = letzter;
         Link<String> anfang = new Link<String>("Erster", mittleresElement);
+
+        System.out.println(mittleresElement);
+        System.out.println(letzter);
+        System.out.println(anfang);
     }
 }

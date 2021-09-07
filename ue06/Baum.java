@@ -298,9 +298,20 @@ public class Baum<T extends Comparable<T>> {
     private BaumInfo getBaumInfo(final Knoten<T> einKnoten) {
         assert (einKnoten != null);
 
-        // Diese Methode wird im Praktikum implementiert
-        // TODO
+        BaumInfo info = new BaumInfo();
+        if (einKnoten == null)
+            return info;
 
-        return new BaumInfo();
+        final BaumInfo infoLinks = getBaumInfo(einKnoten.getKnotenLinks());
+        final BaumInfo infoRechts = getBaumInfo(einKnoten.getKnotenRechts());
+        info.anzKnoten = infoLinks.anzKnoten + infoRechts.anzKnoten + 1;
+        info.hoehe = Math.max(infoLinks.hoehe, infoRechts.hoehe) + 1;
+        if (infoLinks.anzBlaetter == 0 && infoRechts.anzKnoten == 0)
+            info.anzBlaetter = 1;
+        else
+            info.anzBlaetter = infoLinks.anzBlaetter + infoRechts.anzBlaetter;
+
+        return info;
+
     }
 }
